@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecommerce.Models.Product;
 import com.ecommerce.service.ProductService;
@@ -62,7 +63,9 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/find")
-	public String find() {
+	public String find(ModelMap model, @RequestParam String name) {
+		List<Product> list = productService.findByNameLikeOrderByName(name);
+		model.addAttribute("product",list);
 		return "find";
 	}
 }

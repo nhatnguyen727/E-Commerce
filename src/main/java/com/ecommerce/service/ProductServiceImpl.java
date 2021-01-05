@@ -51,6 +51,11 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	public List<Product> findByNameLikeOrderByName(String name) {
+		return productRepository.findByNameLikeOrderByName("%" +name+ "%");
+	}
+
+	@Override
 	public void deleteById(Integer id) {
 		productRepository.deleteById(id);
 	}

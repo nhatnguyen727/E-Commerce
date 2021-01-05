@@ -32,4 +32,7 @@ public interface ProductService {
 
 	Product save(Product entity);
 
+	List<Product> findByNameLikeOrderByName(String name);
+
+
 }
