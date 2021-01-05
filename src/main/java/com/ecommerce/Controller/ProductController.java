@@ -25,47 +25,55 @@ import com.ecommerce.service.ProductService;
 public class ProductController {
 	@Autowired
 	private ProductService productService;
+
 	@GetMapping("/add")
-	public String add(ModelMap model ) {
+	public String add(ModelMap model) {
 		model.addAttribute("product", new Product());
 		return "products/add";
 	}
-	
+
 	@PostMapping("/saveOrUpdate")
 	public String saveOrUpdate(ModelMap model, Product product) {
+		String message = "New product inserted!";
+		if ( product.getId() > 0) {
+			message = "The product update!";
+		}
+
 		productService.save(product);
 		model.addAttribute(product);
+		model.addAttribute("message", message);
 		return "products/saveOrUpdate";
 	}
-	
+
 	@GetMapping("/edit/{id}")
 	public String edit(ModelMap model, @PathVariable(name = "id") Integer id) {
 		Optional<Product> optProduct = productService.findById(id);
-		if(optProduct.isPresent()) {
+		if (optProduct.isPresent()) {
 			model.addAttribute("products", optProduct.get());
-		}else {
+		} else {
 			return list(model);
 		}
-		
+
 		return "products/edit";
 	}
-	
+
 	@GetMapping("/delete/{id}")
-	public String delete(ModelMap model,@PathVariable(name = "id") Integer id) {
+	public String delete(ModelMap model, @PathVariable(name = "id") Integer id) {
 		productService.deleteById(id);
 		return list(model);
 	}
+
 	@RequestMapping("/list")
 	public String list(ModelMap model) {
 		List<Product> list = (List<Product>) productService.findAll();
 		model.addAttribute("products", list);
 		return "list";
 	}
-	
+
 	@RequestMapping("/find")
 	public String find(ModelMap model, @RequestParam String name) {
 		List<Product> list = productService.findByNameLikeOrderByName(name);
-		model.addAttribute("product",list);
+		model.addAttribute("product", list);
 		return "find";
 	}
 }
