@@ -14,19 +14,20 @@ import javax.persistence.Table;
 public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column (name = "name", length = 1000)
+	private Long id;
+	@Column (length = 1000)
 	private String name;
-	@Column	(name = "image", length = 100000)
+	@Column	( length = 100000)
 	private String image;
-	@Column (name = "description", length = 100000) 
+	@Column (length = 100000) 
 	private String description;
-	@Column (name = "price")
+	@Column ()
 	private float price;
-	public int getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
