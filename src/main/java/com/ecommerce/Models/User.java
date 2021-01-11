@@ -20,7 +20,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idUser;
 	@Column(length = 1000)
 	private String fullname;
 	@Column(length = 1000)
@@ -42,11 +42,11 @@ public class User {
 	private Role idRole;
 	@Column
 	private String userstaus;
-	public Long getId() {
-		return id;
+	public Long getidUser() {
+		return idUser;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setidUser(Long id) {
+		this.idUser = id;
 	}
 	public String getFullname() {
 		return fullname;

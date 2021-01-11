@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idPro;
 	@Column (length = 1000)
 	private String name;
 	@Column	( length = 100000)
@@ -24,11 +24,12 @@ public class Product implements Serializable {
 	@Column ()
 	private float price;
 	
-	public Long getId() {
-		return id;
+	
+	public Long getIdPro() {
+		return idPro;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdPro(Long idPro) {
+		this.idPro = idPro;
 	}
 	public String getName() {
 		return name;

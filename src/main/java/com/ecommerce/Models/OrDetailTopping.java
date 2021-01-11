@@ -1,6 +1,5 @@
 package com.ecommerce.Models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,11 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "OrdersDetails")
-public class OrdersDetail {
+@Table(name = "OrDetailTopping")
+public class OrDetailTopping {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idOrdD;
+	private Long id;
 	@ManyToOne
 	@JoinColumn(name ="idOrder")
 	private Orders idOrder;
@@ -22,12 +21,14 @@ public class OrdersDetail {
 	@JoinColumn(name ="idProduct")
 	private Product idPro;
 	@ManyToOne
-	@JoinColumn(name ="idSize")
-	private Size idSize;
-	@Column (length = 100000)
-	private float quantity;
-	@Column (length =1000000)
-	private String note;
+	@JoinColumn(name ="idTopping")
+	private Topping idTopping;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Orders getIdOrder() {
 		return idOrder;
 	}
@@ -40,30 +41,11 @@ public class OrdersDetail {
 	public void setIdPro(Product idPro) {
 		this.idPro = idPro;
 	}
-	public Long getIdOrdD() {
-		return idOrdD;
+	public Topping getIdTopping() {
+		return idTopping;
 	}
-	public void setIdOrdD(Long idOrdD) {
-		this.idOrdD = idOrdD;
+	public void setIdTopping(Topping idTopping) {
+		this.idTopping = idTopping;
 	}
-	public Size getIdSize() {
-		return idSize;
-	}
-	public void setIdSize(Size idSize) {
-		this.idSize = idSize;
-	}
-	public float getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(float quantity) {
-		this.quantity = quantity;
-	}
-	public String getNote() {
-		return note;
-	}
-	public void setNote(String note) {
-		this.note = note;
-	}
-	
 	
 }
