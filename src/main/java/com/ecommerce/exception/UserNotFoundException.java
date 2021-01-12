@@ -1,29 +1,29 @@
 package com.ecommerce.exception;
 
-public class ProductNotFoundException extends RuntimeException{
+public class UserNotFoundException extends RuntimeException{
 
-	public ProductNotFoundException() {
-		super("Order not found exception");
+	public UserNotFoundException() {
+		super("User not found exception");
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductNotFoundException(String message, Throwable cause, boolean enableSuppression,
+	public UserNotFoundException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductNotFoundException(String message, Throwable cause) {
+	public UserNotFoundException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductNotFoundException(String message) {
+	public UserNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductNotFoundException(Throwable cause) {
+	public UserNotFoundException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
