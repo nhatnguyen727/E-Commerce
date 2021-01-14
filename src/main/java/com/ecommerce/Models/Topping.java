@@ -13,7 +13,7 @@ public class Topping {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTopping;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String toppingname;
 	@Column(length = 100000)
 	private float price;

@@ -24,9 +24,9 @@ public class Orders {
 	@ManyToOne
 	@JoinColumn(name ="idUser")
 	private User idUser;
-	@Column (columnDefinition = "nvarchar(10000)")
+	@Column (columnDefinition = "nvarchar(max)")
 	private String orderToName;
-	@Column (columnDefinition = "nvarchar(10000)")
+	@Column (columnDefinition = "nvarchar(max)")
 	private String orderAdress;
 	@Column (length = 10)
 	private String phone;

@@ -15,11 +15,11 @@ public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPro;
-	@Column (columnDefinition = "nvarchar(10000)" )
+	@Column (columnDefinition = "nvarchar(max)" )
 	private String name;
 	@Column	( length = 100000)
 	private String image;
-	@Column (columnDefinition = "nvarchar(10000)") 
+	@Column (columnDefinition = "nvarchar(max)") 
 	private String description;
 	@Column (length = 1000)
 	private float price;

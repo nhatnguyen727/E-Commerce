@@ -13,7 +13,7 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idRole;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String name;
 	
 	

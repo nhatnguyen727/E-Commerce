@@ -13,7 +13,7 @@ public class Size {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idSize;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String sizename;
 	public int getIdSize() {
 		return idSize;

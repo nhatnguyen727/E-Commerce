@@ -21,7 +21,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUser;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String fullname;
 	@Column(length = 1000)
 	private  String username;
@@ -34,7 +34,7 @@ public class User {
 	private Date birthday;
 	@Column(length = 10)
 	private Integer Phone;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String address;
 	
 	@ManyToOne

@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "OrDetailToppingService")
+@Table(name = "OrDetailTopping")
 public class OrDetailTopping {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

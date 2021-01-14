@@ -9,13 +9,13 @@ import com.ecommerce.Models.User;
 
 public interface UserService {
 
-	void deleteAll(List<User> entities);
+	void deleteAll();
+
+	void deleteAll(Iterable<? extends User> entities);
 
 	void delete(User entity);
 
 	void deleteById(Integer id);
-
-	List<User> findByNameLikeOrderByName(String name);
 
 	long count();
 
@@ -31,6 +31,6 @@ public interface UserService {
 
 	User save(User entity);
 
-	void deleteAll();
+	
 
 }

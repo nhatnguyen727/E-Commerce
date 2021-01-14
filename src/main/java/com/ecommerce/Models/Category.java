@@ -13,7 +13,7 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCategory;
-	@Column(columnDefinition = "nvarchar(10000)")
+	@Column(columnDefinition = "nvarchar(max)")
 	private String nameCate;
 	
 	public int getIdCategory() {
