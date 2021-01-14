@@ -12,13 +12,13 @@ import javax.persistence.Table;
 public class Size {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idSize;
-	@Column(length = 100)
+	private int idSize;
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String sizename;
-	public Long getIdSize() {
+	public int getIdSize() {
 		return idSize;
 	}
-	public void setIdSize(Long idSize) {
+	public void setIdSize(int idSize) {
 		this.idSize = idSize;
 	}
 	public String getSizename() {

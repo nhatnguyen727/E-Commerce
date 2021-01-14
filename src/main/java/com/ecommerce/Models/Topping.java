@@ -12,15 +12,15 @@ import javax.persistence.Table;
 public class Topping {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idTopping;
-	@Column(length = 1000)
+	private int idTopping;
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String toppingname;
 	@Column(length = 100000)
 	private float price;
-	public Long getIdTopping() {
+	public int getIdTopping() {
 		return idTopping;
 	}
-	public void setIdTopping(Long idTopping) {
+	public void setIdTopping(int idTopping) {
 		this.idTopping = idTopping;
 	}
 	public String getToppingname() {

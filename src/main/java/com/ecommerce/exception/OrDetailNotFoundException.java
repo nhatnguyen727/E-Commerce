@@ -1,29 +1,29 @@
 package com.ecommerce.exception;
 
-public class OrderNotFoundException extends RuntimeException{
+public class OrDetailNotFoundException extends RuntimeException{
 
-	public OrderNotFoundException() {
-		super("Order not found exception");
+	public OrDetailNotFoundException() {
+		super("Order detail not found exception");
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderNotFoundException(String message, Throwable cause, boolean enableSuppression,
+	public OrDetailNotFoundException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderNotFoundException(String message, Throwable cause) {
+	public OrDetailNotFoundException(String message, Throwable cause) {
 		super(message, cause);
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderNotFoundException(String message) {
+	public OrDetailNotFoundException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrderNotFoundException(Throwable cause) {
+	public OrDetailNotFoundException(Throwable cause) {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}

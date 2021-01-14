@@ -20,13 +20,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idOrd;
+	private int idOrd;
 	@ManyToOne
 	@JoinColumn(name ="idUser")
 	private User idUser;
-	@Column (length = 100000)
+	@Column (columnDefinition = "nvarchar(10000)")
 	private String orderToName;
-	@Column (length = 100000)
+	@Column (columnDefinition = "nvarchar(10000)")
 	private String orderAdress;
 	@Column (length = 10)
 	private String phone;
@@ -35,10 +35,10 @@ public class Orders {
 	private Date orderDate;
 	@Column (length = 10000)
 	private String orderStatus;
-	public Long getIdOrd() {
+	public int getIdOrd() {
 		return idOrd;
 	}
-	public void setIdOrd(Long idOrd) {
+	public void setIdOrd(int idOrd) {
 		this.idOrd = idOrd;
 	}
 	public User getIdUser() {

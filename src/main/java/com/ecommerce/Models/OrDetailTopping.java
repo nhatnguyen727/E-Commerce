@@ -9,11 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "OrDetailTopping")
+@Table(name = "OrDetailToppingService")
 public class OrDetailTopping {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	@ManyToOne
 	@JoinColumn(name ="idOrder")
 	private Orders idOrder;
@@ -23,10 +23,10 @@ public class OrDetailTopping {
 	@ManyToOne
 	@JoinColumn(name ="idTopping")
 	private Topping idTopping;
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public Orders getIdOrder() {

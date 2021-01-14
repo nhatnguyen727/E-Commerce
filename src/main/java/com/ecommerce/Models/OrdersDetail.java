@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class OrdersDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idOrdD;
+	private int idOrdD;
 	@ManyToOne
 	@JoinColumn(name ="idOrder")
 	private Orders idOrder;
@@ -24,7 +24,7 @@ public class OrdersDetail {
 	@ManyToOne
 	@JoinColumn(name ="idSize")
 	private Size idSize;
-	@Column (length = 100000)
+	@Column (length = 1000)
 	private float quantity;
 	@Column (length =1000000)
 	private String note;
@@ -40,10 +40,10 @@ public class OrdersDetail {
 	public void setIdPro(Product idPro) {
 		this.idPro = idPro;
 	}
-	public Long getIdOrdD() {
+	public int getIdOrdD() {
 		return idOrdD;
 	}
-	public void setIdOrdD(Long idOrdD) {
+	public void setIdOrdD(int idOrdD) {
 		this.idOrdD = idOrdD;
 	}
 	public Size getIdSize() {

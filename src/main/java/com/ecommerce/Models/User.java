@@ -20,12 +20,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idUser;
-	@Column(length = 1000)
+	private int idUser;
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String fullname;
 	@Column(length = 1000)
 	private  String username;
-	@Column(length =1000)
+	@Column(length =10000)
 	private String password;
 	@Column(length = 1000)
 	private String photo;
@@ -34,7 +34,7 @@ public class User {
 	private Date birthday;
 	@Column(length = 10)
 	private Integer Phone;
-	@Column(length = 1000)
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String address;
 	
 	@ManyToOne
@@ -42,10 +42,10 @@ public class User {
 	private Role idRole;
 	@Column
 	private String userstaus;
-	public Long getidUser() {
+	public int getidUser() {
 		return idUser;
 	}
-	public void setidUser(Long id) {
+	public void setidUser(int id) {
 		this.idUser = id;
 	}
 	public String getFullname() {

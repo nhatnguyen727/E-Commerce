@@ -24,7 +24,8 @@ import com.ecommerce.Models.Product;
 import com.ecommerce.exception.ProductNotFoundException;
 import com.ecommerce.service.ProductService;
 
-
+@RestController
+@RequestMapping("/products")
 public class ProductController {
 	@Autowired
 	private ProductService productService;

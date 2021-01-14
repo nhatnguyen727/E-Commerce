@@ -12,13 +12,14 @@ import javax.persistence.Table;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idCategory;
-	@Column(length = 1000)
+	private int idCategory;
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String nameCate;
-	public Long getIdCategory() {
+	
+	public int getIdCategory() {
 		return idCategory;
 	}
-	public void setIdCategory(Long idCategory) {
+	public void setIdCategory(int idCategory) {
 		this.idCategory = idCategory;
 	}
 	public String getNameCate() {

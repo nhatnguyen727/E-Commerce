@@ -12,15 +12,15 @@ import javax.persistence.Table;
 public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idRole;
-	@Column(length =1000)
+	private int idRole;
+	@Column(columnDefinition = "nvarchar(10000)")
 	private String name;
 	
 	
-	public Long getIdRole() {
+	public int getIdRole() {
 		return idRole;
 	}
-	public void setIdRole(Long idRole) {
+	public void setIdRole(int idRole) {
 		this.idRole = idRole;
 	}
 	public String getName() {
