@@ -19,7 +19,7 @@ import com.ecommerce.service.UserService;
 @RequestMapping("/users")
 public class UserController {
 	@Autowired 
-	private UserService userService;
+	UserService userService;
 	
 	@PostMapping("")
 	public void insert(@RequestBody User user) {

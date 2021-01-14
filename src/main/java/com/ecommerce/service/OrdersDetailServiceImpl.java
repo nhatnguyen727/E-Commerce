@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ecommerce.Models.OrdersDetail;
 import com.ecommerce.repositories.OrdersDetailRepository;
-
+@Service
 public class OrdersDetailServiceImpl implements OrdersDetailService{
 	@Autowired 
 	OrdersDetailRepository detailRepository;

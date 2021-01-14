@@ -15,7 +15,7 @@ public interface UserService {
 
 	void deleteById(Integer id);
 
-	List<User> findByNameLikeOrderByName(String name);
+	
 
 	int count();
 

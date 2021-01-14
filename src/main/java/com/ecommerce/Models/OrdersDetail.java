@@ -25,7 +25,7 @@ public class OrdersDetail {
 	private Orders idOrder;
 	@ManyToOne
 	@JoinColumn(name ="idProduct")
-	private Product idPro;
+	private Product idProduct;
 	@ManyToOne
 	@JoinColumn(name ="idSize")
 	private Size idSize;
@@ -39,11 +39,11 @@ public class OrdersDetail {
 	public void setIdOrder(Orders idOrder) {
 		this.idOrder = idOrder;
 	}
-	public Product getIdPro() {
-		return idPro;
+	public Product getIdProduct() {
+		return idProduct;
 	}
-	public void setIdPro(Product idPro) {
-		this.idPro = idPro;
+	public void setIdProduct(Product idPro) {
+		this.idProduct = idPro;
 	}
 	public int getIdOrdD() {
 		return idOrdD;

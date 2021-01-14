@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ecommerce.Models.Role;
 import com.ecommerce.Models.Size;
 import com.ecommerce.repositories.RoleRepository;
 import com.ecommerce.repositories.SizeRepository;
-
+@Service
 public class SizeServiceImpl implements SizeService{
 	@Autowired 
 	SizeRepository sizeRepository;

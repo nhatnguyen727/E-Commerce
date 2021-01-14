@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ecommerce.Models.OrDetailTopping;
 import com.ecommerce.repositories.OrDetailToppingRepository;
-
+@Service
 public class OrDetailToppingServiceImpl implements OrDetailToppingService{
 	@Autowired 
 	OrDetailToppingRepository detailToppingRepository;
