@@ -7,6 +7,8 @@ import com.ecommerce.model.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
+	
+	Iterable<User> findByDeletedFalse();
 
 	User findByUsername(String username);
 

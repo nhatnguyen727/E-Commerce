@@ -33,7 +33,7 @@ public class UserController {
 
 	@GetMapping("/admin/user")
 	public Iterable<User> list() {
-		return userRepo.findAll();
+		return userRepo.findByDeletedFalse();
 	}
 
 	@PostMapping("/user/register")
