@@ -42,10 +42,12 @@ public class RegistrationFormat {
 	@Pattern(regexp = "^(?=\\S+$).{4,}$", message = "must be at least 4 chars, whitespace is not allowed.")
 	private String password;
 
-	@NotNull
+	@NotNull // not null
+	@Size(min = 1, message = "is required!") // not empty string
 	private String fullname;
 
 	@NotNull
+	@Size(min = 1, message = "is required!")
 	private String address;
 
 	@NotNull
