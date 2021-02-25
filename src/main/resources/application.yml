@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    hibernate.ddl-auto: create
+    show-sql: true
+  datasource:
+    data: classpath:data.sql
+    initialization-mode: always
+  profiles:
+    active:
+      - dev
+
+---
+#All configs below OVERRIDE the default's configs, not REPLACE the whole default. 
+#The rest of default's configs (which not overriden) still remain active
+spring:
+  profiles: dev
+  
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+    
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=ecommerce
+    username: sa
+    password: 12345
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
