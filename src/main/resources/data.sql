@@ -952,8 +952,36 @@ INSERT INTO role(name) VALUES ('ADMIN');
 INSERT INTO role(name) VALUES ('MEMBER');
 
 INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Binz Da Poet', 'https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/105484907_3070461989658121_3535176663713041712_o.jpg?_nc_cat=105&ccb=3&_nc_sid=8bfeb9&_nc_ohc=gpkwRlGcNJwAX9bO55h&_nc_ht=scontent.fdad3-2.fna&oh=a447f6653c274b892794ee72b37f18f3&oe=6060FA98', '1234567890', 'Penthouse trên Đà Lạt', 'admin@admin.admin', 'admin1', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 1);
-INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Bill Gate', 'https://myhero.com/content/images/thumbs/0035826_bill-gates_400.jpeg', '1234567890', 'Microsoft', 'member1@member.member', 'member1', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 1);
+INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Bill Gate', 'https://myhero.com/content/images/thumbs/0035826_bill-gates_400.jpeg', '1234567890', 'Microsoft', 'member1@member.member', 'member1', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 2);
 INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Donald Trump', 'https://pbs.twimg.com/profile_images/736392853992001537/eF4LJLkn.jpg', '1234567890', 'Trump Tower', 'member2@member.member', 'member2', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 2);
 INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Joe Biden', 'https://mediad.publicbroadcasting.net/p/krwg/files/styles/small/public/201804/Joe-biden-official-portrait_1600jpg.jpg', '1234567890', 'White House', 'member3@member.member', 'member3', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 2);
-INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Elson Musk', 'https://global-uploads.webflow.com/5e33a765cf951f99dc204f8b/5e4e51c079f2004b35a29022_elon-musk.jpeg', '1234567890', 'SpaceX', 'admin2@member.member', 'admin2', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 1);
+INSERT INTO users(fullname,photo,phone,address,email,username,password,deleted,role_id) VALUES ('Elson Musk', 'https://global-uploads.webflow.com/5e33a765cf951f99dc204f8b/5e4e51c079f2004b35a29022_elon-musk.jpeg', '1234567890', 'SpaceX', 'admin2@admin.admin', 'admin2', '$2a$10$sj/IBCelROM99FWJroOyVOYGuZcdF1dNB2AITUs/BwbbkUUeKzBZO', 0, 1);
 
+INSERT INTO orders(recipient_name,order_address,order_date,order_status,phone,user_id) VALUES ('Donald Trump', 'Trump Tower', '2021-01-01 00:00:00	', 'delivered...', '1234567890', 3);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (7, 'note1', 2, 1, 1);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (5, 'note2', 1, 2, 1);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (6, 'note3', 3, 3, 1);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (1, 1);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (1, 2);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (1, 3);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (2, 4);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (2, 5);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (3, 2);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (3, 5);
+
+INSERT INTO orders(recipient_name,order_address,order_date,order_status,phone,user_id) VALUES ('Joe Biden', 'White House', '2021-01-01 00:00:00	', 'on the way...', '1234567890', 4);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (3, 'note4', 2, 4, 2);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (4, 'note5', 1, 5, 2);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (4, 1);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (4, 2);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (4, 3);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (5, 4);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (5, 5);
+
+INSERT INTO orders(recipient_name,order_address,order_date,order_status,phone,user_id) VALUES ('Elson Musk', 'SpaceX', '2021-01-01 00:00:00	', 'on the way...', '1234567890', 5);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (2, 'note6', 3, 6, 3);
+INSERT INTO order_details(quantity,note,size_id,product_id,order_id) VALUES (1, 'note7', 2, 7, 3);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (6, 1);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (6, 2);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (7, 4);
+INSERT INTO order_details_toppings(order_detail_id,topping_id) VALUES (7, 5);
