@@ -1,8 +1,8 @@
 package com.ecommerce.security;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -42,12 +42,13 @@ public class RegistrationFormat {
 	@Pattern(regexp = "^(?=\\S+$).{4,}$", message = "must be at least 4 chars, whitespace is not allowed.")
 	private String password;
 
-	@NotNull // not null
-	@Size(min = 1, message = "is required!") // not empty string
+	@NotBlank(message = "is required!")
 	private String fullname;
 
-	@NotNull
-	@Size(min = 1, message = "is required!")
+	@NotBlank(message = "is required!")
+	private String photo;
+
+	@NotBlank(message = "is required!")
 	private String address;
 
 	@NotNull
@@ -65,6 +66,7 @@ public class RegistrationFormat {
 		user.setEmail(email);
 		user.setUsername(username);
 		user.setFullname(fullname);
+		user.setPhoto(photo);
 		user.setAddress(address);
 		user.setPhone(phone);
 		if (!admin) {
@@ -121,6 +123,14 @@ public class RegistrationFormat {
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public String getAddress() {

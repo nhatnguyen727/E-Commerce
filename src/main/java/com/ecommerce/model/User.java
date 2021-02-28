@@ -34,6 +34,8 @@ public class User implements UserDetails {
 
 	private String fullname;
 
+	private String photo;
+
 	private String phone;
 
 	private String address;
@@ -107,6 +109,14 @@ public class User implements UserDetails {
 
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public String getPhone() {

@@ -2,9 +2,12 @@ package com.ecommerce.controller;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,7 +43,12 @@ public class ProductController {
 	}
 
 	@PostMapping("/admin/product")
-	public ResponseEntity<String> insert(@RequestBody Product product) {
+	public ResponseEntity<String> insert(@Valid @RequestBody Product product, Errors errors) {
+		if (errors.hasErrors()) {
+			return new ResponseEntity<>(
+					errors.getFieldError().getField() + " " + errors.getFieldError().getDefaultMessage(),
+					HttpStatus.FORBIDDEN);
+		}
 		if (productRepo.existsByName(product.getName())) {
 			return new ResponseEntity<>("product name already exists!", HttpStatus.CONFLICT);
 		}
@@ -49,8 +57,14 @@ public class ProductController {
 	}
 
 	@PutMapping("/admin/product/{id}")
-	public ResponseEntity<String> update(@PathVariable("id") int id, @RequestBody Product product) {
+	public ResponseEntity<String> update(@PathVariable("id") int id, @Valid @RequestBody Product product,
+			Errors errors) {
 		if (productRepo.existsById(id) && id == product.getId()) {
+			if (errors.hasErrors()) {
+				return new ResponseEntity<>(
+						errors.getFieldError().getField() + " " + errors.getFieldError().getDefaultMessage(),
+						HttpStatus.FORBIDDEN);
+			}
 			if (productRepo.existsByName(product.getName())) {
 				if (productRepo.findByName(product.getName()).getId() != id) {
 					return new ResponseEntity<>("product name already exists!", HttpStatus.CONFLICT);
